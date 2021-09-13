@@ -3,7 +3,7 @@ import "./Video.css";
 import VideoFooter from "./VideoFooter";
 import VideoSidebar from "./VideoSidebar";
 
-function Video() {
+function Video({ url, channel, description, song, likes, messages, shares }) {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef(null);
 
@@ -24,13 +24,10 @@ function Video() {
         className="video__player"
         loop
         ref={videoRef}
-        src="https://player.vimeo.com/external/289189952.sd.mp4?s=756cbea276c653d18bc7141d8458693936225dd9&profile_id=165&oauth2_token_id=57447761"
+        src={url}
       ></video>
-
-      <VideoSidebar />
-      <VideoFooter />
-      {/* Video footer */}
-      {/* VideoSidebar */}
+      <VideoFooter channel={channel} description={description} song={song} />
+      <VideoSidebar likes={likes} messages={messages} shares={shares} />
     </div>
   );
 }
