@@ -1,0 +1,31 @@
+html {
+  scroll-snap-type: y mandatory; /* The snap functionality 1st step */
+}
+
+.app {
+  height: 100vh;
+  background-color: black;
+  display: grid;
+  place-items: center; /* Trick to allign the items both horizontally and vertically */
+}
+
+.app__videos {
+  position: relative;
+  height: 800px;
+  border-radius: 20px;
+  overflow: scroll;
+  width: 80%;
+  max-width: 500px;
+  scroll-snap-type: y mandatory; /* The snap functionality 2nd step */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.app__videos::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.app__videos {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
